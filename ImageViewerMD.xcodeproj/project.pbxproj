@@ -16,6 +16,10 @@
 		FBDBAEBE204D1DF000ADA6DE /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBAEBC204D1DF000ADA6DE /* Photo+CoreDataClass.swift */; };
 		FBDBAEBF204D1DF000ADA6DE /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBAEBD204D1DF000ADA6DE /* Photo+CoreDataProperties.swift */; };
 		FBDBAEC1204D21B400ADA6DE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBAEC0204D21B400ADA6DE /* CoreDataStack.swift */; };
+		FBDBAEC3204D731900ADA6DE /* PhotoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBAEC2204D731900ADA6DE /* PhotoListController.swift */; };
+		FBDBAEC5204D7C8D00ADA6DE /* PhotosDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBAEC4204D7C8D00ADA6DE /* PhotosDataSource.swift */; };
+		FBDBAEC7204D7E8800ADA6DE /* PhotosFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBAEC6204D7E8800ADA6DE /* PhotosFetchedResultsController.swift */; };
+		FBDBAEC9204D878A00ADA6DE /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBAEC8204D878A00ADA6DE /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		FBDBAEBC204D1DF000ADA6DE /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FBDBAEBD204D1DF000ADA6DE /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FBDBAEC0204D21B400ADA6DE /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FBDBAEC2204D731900ADA6DE /* PhotoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListController.swift; sourceTree = "<group>"; };
+		FBDBAEC4204D7C8D00ADA6DE /* PhotosDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDataSource.swift; sourceTree = "<group>"; };
+		FBDBAEC6204D7E8800ADA6DE /* PhotosFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosFetchedResultsController.swift; sourceTree = "<group>"; };
+		FBDBAEC8204D878A00ADA6DE /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +86,12 @@
 			children = (
 				FBDBAEBC204D1DF000ADA6DE /* Photo+CoreDataClass.swift */,
 				FBDBAEBD204D1DF000ADA6DE /* Photo+CoreDataProperties.swift */,
-				FBDBAEAB204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld */,
 				FBDBAEC0204D21B400ADA6DE /* CoreDataStack.swift */,
+				FBDBAEC2204D731900ADA6DE /* PhotoListController.swift */,
+				FBDBAEC8204D878A00ADA6DE /* PhotoCell.swift */,
+				FBDBAEAB204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld */,
+				FBDBAEC6204D7E8800ADA6DE /* PhotosFetchedResultsController.swift */,
+				FBDBAEC4204D7C8D00ADA6DE /* PhotosDataSource.swift */,
 			);
 			path = StarterFiles;
 			sourceTree = "<group>";
@@ -157,10 +169,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBDBAEBB204D1D4B00ADA6DE /* PhotoPickerManager.swift in Sources */,
+				FBDBAEC3204D731900ADA6DE /* PhotoListController.swift in Sources */,
 				FBDBAEAD204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld in Sources */,
 				FBDBAEBE204D1DF000ADA6DE /* Photo+CoreDataClass.swift in Sources */,
 				FBDBAEC1204D21B400ADA6DE /* CoreDataStack.swift in Sources */,
 				FBDBAEBF204D1DF000ADA6DE /* Photo+CoreDataProperties.swift in Sources */,
+				FBDBAEC9204D878A00ADA6DE /* PhotoCell.swift in Sources */,
+				FBDBAEC7204D7E8800ADA6DE /* PhotosFetchedResultsController.swift in Sources */,
+				FBDBAEC5204D7C8D00ADA6DE /* PhotosDataSource.swift in Sources */,
 				FBDBAEA5204D1C8D00ADA6DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
