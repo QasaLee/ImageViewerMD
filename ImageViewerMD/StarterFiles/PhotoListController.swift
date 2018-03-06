@@ -22,7 +22,7 @@ class PhotoListController: UIViewController {
     
     lazy var photoPickerManager: PhotoPickerManager = {
         let manager = PhotoPickerManager(presentingViewController: self)
-        manager.delegate = self // In theory, I shall add an extension.
+//        manager.delegate = self // In theory, I shall add an extension.
         return manager
     }()
     
@@ -32,15 +32,16 @@ class PhotoListController: UIViewController {
     }
     
     @IBAction func launchCamera(_ sender: Any) {
-        photoPickerManager.presentPhotoPicker(animated: true)
+        photoPickerManager.presentPhotoPicker(animated: true) // Launch photoPickerManager
     }
 }
 
-extension PhotoListController: PhotoPickerManagerDelegate{
-    func manager(_ manager: PhotoPickerManager, didPickImage image: UIImage) {
-        let _ = Photo.with(image, in: context)
-        
-        context.saveChanges()
-        manager.dismissPhotoPicker(animated: true, completion: nil)
-    }
-}
+//extension PhotoListController: PhotoPickerManagerDelegate{
+//    func manager(_ manager: PhotoPickerManager, didPickImage image: UIImage) {
+//        let _ = Photo.with(image, in: context)
+//        
+//        context.saveChanges()
+//        manager.dismissPhotoPicker(animated: true, completion: nil)
+//    }
+//}
+
