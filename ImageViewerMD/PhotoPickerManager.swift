@@ -15,41 +15,27 @@ import MobileCoreServices
 class PhotoPickerManager: NSObject {
     private let imagePickerController = UIImagePickerController()
     private let presentingController: UIViewController
-//    weak var delegate: PhotoPickerManagerDelegate?
     
     init(presentingViewController: UIViewController) {
         self.presentingController = presentingViewController
-        super.init()
+        super.init() // NSObject has some things to init.
         
-//        configure()
+        configure()
     }
     
     func presentPhotoPicker(animated: Bool) {
-        presentingController.present(imagePickerController, animated: animated, completion: nil) // Presents a view controller modally.
+        presentingController.present(imagePickerController, animated: animated, completion: nil) // "presentingController" presents a view controller  which is imagePickerController modally.
     }
-//
-//    func dismissPhotoPicker(animated: Bool, completion: (() -> Void)?) {
-//        imagePickerController.dismiss(animated: animated, completion: completion)
-//    }
-    
-//    private func configure() {
-//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//            imagePickerController.sourceType = .camera
-//            imagePickerController.cameraDevice = .front
-//        } else {
-//            imagePickerController.sourceType = .photoLibrary
-//        }
-//
-//        imagePickerController.mediaTypes = [kUTTypeImage as String]
-//
-//        imagePickerController.delegate = self
-//    }
+
+    private func configure() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) { // 如果可以用camera
+            imagePickerController.sourceType = .camera
+            imagePickerController.cameraDevice = .rear
+        } else {
+            imagePickerController.sourceType = .photoLibrary
+        }
+        // k: Constant Objetive-C Convention
+        // UT: Uniform Type
+        imagePickerController.mediaTypes = [kUTTypeImage as String] // 好像可有可无
+    }
 }
-
-//extension PhotoPickerManager: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
-//        delegate?.manager(self, didPickImage: image)
-//    }
-//}
-
