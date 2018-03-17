@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,6 +52,7 @@
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="photoView" destination="RwQ-1U-e1H" id="nWH-3f-IXb"/>
+                                                    <segue destination="j5X-Xy-Ll3" kind="show" identifier="showPhoto" id="9IU-bj-s2X"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -92,6 +94,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="132.68365817091455"/>
+        </scene>
+        <!--Photo Page Controller-->
+        <scene sceneID="hZ4-jR-EIQ">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="j5X-Xy-Ll3" customClass="PhotoPageController" customModule="ImageViewerMD" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JSA-cP-dDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1238" y="133"/>
+        </scene>
+        <!--Photo Viewer Controller-->
+        <scene sceneID="jLO-yu-iHo">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewerController" id="RqP-33-5uh" customClass="PhotoViewerController" customModule="ImageViewerMD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KhA-IW-MXi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LA7-Ip-e7c">
+                                <rect key="frame" x="0.0" y="193" width="375" height="281"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LA7-Ip-e7c" secondAttribute="height" multiplier="4:3" id="DTJ-o1-bN7"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="lz8-Zn-j94" appends="YES" id="brC-Zf-YVl"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LA7-Ip-e7c" firstAttribute="leading" secondItem="KhA-IW-MXi" secondAttribute="leading" id="8mw-Ug-gHu"/>
+                            <constraint firstAttribute="trailing" secondItem="LA7-Ip-e7c" secondAttribute="trailing" id="BRY-5S-x8U"/>
+                            <constraint firstItem="LA7-Ip-e7c" firstAttribute="centerY" secondItem="KhA-IW-MXi" secondAttribute="centerY" id="dUj-lu-I1C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nlv-uK-W6t"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="LA7-Ip-e7c" id="G55-Xg-nLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dn2-Hc-uJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lz8-Zn-j94">
+                    <connections>
+                        <action selector="launchPhotoZoomController:" destination="RqP-33-5uh" id="dQN-JV-YXc"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2014" y="133"/>
+        </scene>
+        <!--Photo Zoom Controller-->
+        <scene sceneID="R1Y-mI-hKu">
+            <objects>
+                <viewController storyboardIdentifier="PhotoZoomController" id="Bdc-0K-M9I" customClass="PhotoZoomController" customModule="ImageViewerMD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pv2-Tb-IAC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="str-xF-19E">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aFm-O8-9Qd">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="646"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aFm-O8-9Qd" firstAttribute="top" secondItem="str-xF-19E" secondAttribute="top" id="Ceg-8z-i5U"/>
+                                    <constraint firstItem="aFm-O8-9Qd" firstAttribute="centerX" secondItem="str-xF-19E" secondAttribute="centerX" id="Ias-kt-t1a"/>
+                                    <constraint firstAttribute="bottom" secondItem="aFm-O8-9Qd" secondAttribute="bottom" id="Rtk-He-phY"/>
+                                    <constraint firstAttribute="trailing" secondItem="aFm-O8-9Qd" secondAttribute="trailing" id="Tmz-Y6-awN"/>
+                                    <constraint firstItem="aFm-O8-9Qd" firstAttribute="centerY" secondItem="str-xF-19E" secondAttribute="centerY" id="YlB-0E-uhQ"/>
+                                    <constraint firstItem="aFm-O8-9Qd" firstAttribute="leading" secondItem="str-xF-19E" secondAttribute="leading" id="bsb-RV-7c6"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="str-xF-19E" firstAttribute="leading" secondItem="pv2-Tb-IAC" secondAttribute="leading" id="2pd-Pa-enA"/>
+                            <constraint firstItem="str-xF-19E" firstAttribute="top" secondItem="EvT-sR-pz0" secondAttribute="top" id="86Y-Ef-w5X"/>
+                            <constraint firstAttribute="trailing" secondItem="str-xF-19E" secondAttribute="trailing" id="UbU-JP-oLu"/>
+                            <constraint firstItem="EvT-sR-pz0" firstAttribute="bottom" secondItem="str-xF-19E" secondAttribute="bottom" id="VMS-c0-0Ip"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EvT-sR-pz0"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="aFm-O8-9Qd" id="wfC-Ln-zSp"/>
+                        <outlet property="scrollView" destination="str-xF-19E" id="bcD-ry-hzO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nNc-pT-z4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2782" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OBU-Po-gJT">

@@ -8,13 +8,15 @@
 import UIKit
 import MobileCoreServices
 
-//protocol PhotoPickerManagerDelegate: class {
-//    func manager(_ manager: PhotoPickerManager, didPickImage image: UIImage)
-//}
+protocol PhotoPickerManagerDelegate: AnyObject { // Could also be "class"
+    func manager(_ manager: PhotoPickerManager, didPickImage image: UIImage)
+}
 
+/// Has three instances: imgPickerC, presentingC, delegate.
 class PhotoPickerManager: NSObject {
     private let imagePickerController = UIImagePickerController()
     private let presentingController: UIViewController
+    weak var delegate: PhotoPickerManagerDelegate?
     
     init(presentingViewController: UIViewController) {
         self.presentingController = presentingViewController
@@ -26,6 +28,10 @@ class PhotoPickerManager: NSObject {
     func presentPhotoPicker(animated: Bool) {
         presentingController.present(imagePickerController, animated: animated, completion: nil) // "presentingController" presents a view controller  which is imagePickerController modally.
     }
+    
+    func dismissPhotoPicker(animated: Bool, comletion:(() -> Void)?) {
+        imagePickerController.dismiss(animated: animated, completion: comletion)
+    }
 
     private func configure() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) { // 如果可以用camera
@@ -36,6 +42,14 @@ class PhotoPickerManager: NSObject {
         }
         // k: Constant Objetive-C Convention
         // UT: Uniform Type
-        imagePickerController.mediaTypes = [kUTTypeImage as String] // 好像可有可无
+        imagePickerController.mediaTypes = [kUTTypeImage as String] // 好像这句可有可无
+        imagePickerController.delegate = self
+    }
+}
+
+extension PhotoPickerManager: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+        delegate?.manager(self, didPickImage: image)
     }
 }

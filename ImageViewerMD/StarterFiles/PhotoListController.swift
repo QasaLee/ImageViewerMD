@@ -22,7 +22,7 @@ class PhotoListController: UIViewController {
     
     lazy var photoPickerManager: PhotoPickerManager = {
         let manager = PhotoPickerManager(presentingViewController: self)
-//        manager.delegate = self // In theory, I shall add an extension.
+        manager.delegate = self // By self, sets delegate more power!
         return manager
     }()
     
@@ -34,14 +34,25 @@ class PhotoListController: UIViewController {
     @IBAction func launchCamera(_ sender: Any) {
         photoPickerManager.presentPhotoPicker(animated: true) // Launch photoPickerManager
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhoto" {
+            if let cell = sender as? UICollectionViewCell, let indexPath = photosCollectionView.indexPath(for: cell), let photoPageController = segue.destination as? PhotoPageController {
+                
+                photoPageController.photos = dataSource.photos
+                photoPageController.indexOfCurrentPhoto = indexPath.row
+            }
+        }
+    }
 }
 
-//extension PhotoListController: PhotoPickerManagerDelegate{
-//    func manager(_ manager: PhotoPickerManager, didPickImage image: UIImage) {
-//        let _ = Photo.with(image, in: context)
-//        
-//        context.saveChanges()
-//        manager.dismissPhotoPicker(animated: true, completion: nil)
-//    }
-//}
-
+extension PhotoListController: PhotoPickerManagerDelegate {
+    func manager(_ manager: PhotoPickerManager, didPickImage image: UIImage) {
+        let _ = Photo.with(image, in: context)
+        context.saveChanges()
+        
+        manager.dismissPhotoPicker(animated: true, comletion: nil)
+    }
+    
+    
+}

@@ -12,17 +12,15 @@ import CoreData
 import UIKit
 
 extension Photo {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Photo> {
         let request = NSFetchRequest<Photo>(entityName: "Photo")
         let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
         request.sortDescriptors = [sortDescriptor]
         return request
     }
-
+    
     @NSManaged public var creationDate: NSDate
     @NSManaged public var imageData: NSData
-
 }
 
 extension Photo {
@@ -30,7 +28,7 @@ extension Photo {
         return String(describing: Photo.self)
     }
     
-    @nonobjc class func with(_ image: UIImage, in context: NSManagedObjectContext) -> Photo {
+    @nonobjc class func with(_ image: UIImage, in context: NSManagedObjectContext) -> Photo { // static method
         let photo = NSEntityDescription.insertNewObject(forEntityName: Photo.entityName, into: context) as! Photo
         
         photo.creationDate = Date() as NSDate

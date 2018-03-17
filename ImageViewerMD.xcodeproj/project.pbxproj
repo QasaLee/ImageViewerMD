@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB8EC7DE205951DC003DEB6D /* PhotoPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EC7DD205951DC003DEB6D /* PhotoPageController.swift */; };
+		FB8EC7E020595406003DEB6D /* PhotoViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */; };
+		FB8EC7E2205D53D6003DEB6D /* PhotoZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EC7E1205D53D6003DEB6D /* PhotoZoomController.swift */; };
 		FBDBAEA5204D1C8D00ADA6DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBAEA4204D1C8D00ADA6DE /* AppDelegate.swift */; };
 		FBDBAEAA204D1C8D00ADA6DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDBAEA8204D1C8D00ADA6DE /* Main.storyboard */; };
 		FBDBAEAD204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBDBAEAB204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB8EC7DD205951DC003DEB6D /* PhotoPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageController.swift; sourceTree = "<group>"; };
+		FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerController.swift; sourceTree = "<group>"; };
+		FB8EC7E1205D53D6003DEB6D /* PhotoZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoZoomController.swift; sourceTree = "<group>"; };
 		FBDBAEA1204D1C8D00ADA6DE /* ImageViewerMD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageViewerMD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDBAEA4204D1C8D00ADA6DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBDBAEA9204D1C8D00ADA6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +83,9 @@
 				FBDBAEB0204D1C8D00ADA6DE /* LaunchScreen.storyboard */,
 				FBDBAEB3204D1C8D00ADA6DE /* Info.plist */,
 				FBDBAEBA204D1D4B00ADA6DE /* PhotoPickerManager.swift */,
+				FB8EC7DD205951DC003DEB6D /* PhotoPageController.swift */,
+				FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */,
+				FB8EC7E1205D53D6003DEB6D /* PhotoZoomController.swift */,
 			);
 			path = ImageViewerMD;
 			sourceTree = "<group>";
@@ -169,9 +178,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBDBAEBB204D1D4B00ADA6DE /* PhotoPickerManager.swift in Sources */,
+				FB8EC7DE205951DC003DEB6D /* PhotoPageController.swift in Sources */,
+				FB8EC7E020595406003DEB6D /* PhotoViewerController.swift in Sources */,
 				FBDBAEC3204D731900ADA6DE /* PhotoListController.swift in Sources */,
 				FBDBAEAD204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld in Sources */,
 				FBDBAEBE204D1DF000ADA6DE /* Photo+CoreDataClass.swift in Sources */,
+				FB8EC7E2205D53D6003DEB6D /* PhotoZoomController.swift in Sources */,
 				FBDBAEC1204D21B400ADA6DE /* CoreDataStack.swift in Sources */,
 				FBDBAEBF204D1DF000ADA6DE /* Photo+CoreDataProperties.swift in Sources */,
 				FBDBAEC9204D878A00ADA6DE /* PhotoCell.swift in Sources */,
