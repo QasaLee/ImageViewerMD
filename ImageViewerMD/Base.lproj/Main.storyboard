@@ -98,7 +98,7 @@
         <!--Photo Page Controller-->
         <scene sceneID="hZ4-jR-EIQ">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="j5X-Xy-Ll3" customClass="PhotoPageController" customModule="ImageViewerMD" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="j5X-Xy-Ll3" customClass="PhotoPageController" customModule="ImageViewerMD" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSA-cP-dDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1238" y="133"/>
@@ -160,12 +160,15 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="aFm-O8-9Qd" firstAttribute="top" secondItem="str-xF-19E" secondAttribute="top" id="Ceg-8z-i5U"/>
-                                    <constraint firstItem="aFm-O8-9Qd" firstAttribute="centerX" secondItem="str-xF-19E" secondAttribute="centerX" id="Ias-kt-t1a"/>
+                                    <constraint firstItem="aFm-O8-9Qd" firstAttribute="centerX" secondItem="str-xF-19E" secondAttribute="centerX" placeholder="YES" id="Ias-kt-t1a"/>
                                     <constraint firstAttribute="bottom" secondItem="aFm-O8-9Qd" secondAttribute="bottom" id="Rtk-He-phY"/>
                                     <constraint firstAttribute="trailing" secondItem="aFm-O8-9Qd" secondAttribute="trailing" id="Tmz-Y6-awN"/>
-                                    <constraint firstItem="aFm-O8-9Qd" firstAttribute="centerY" secondItem="str-xF-19E" secondAttribute="centerY" id="YlB-0E-uhQ"/>
+                                    <constraint firstItem="aFm-O8-9Qd" firstAttribute="centerY" secondItem="str-xF-19E" secondAttribute="centerY" placeholder="YES" id="YlB-0E-uhQ"/>
                                     <constraint firstItem="aFm-O8-9Qd" firstAttribute="leading" secondItem="str-xF-19E" secondAttribute="leading" id="bsb-RV-7c6"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Bdc-0K-M9I" id="fVe-tC-p1E"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -178,6 +181,10 @@
                         <viewLayoutGuide key="safeArea" id="EvT-sR-pz0"/>
                     </view>
                     <connections>
+                        <outlet property="imageViewBottomConstraints" destination="Rtk-He-phY" id="n7e-uT-ARq"/>
+                        <outlet property="imageViewLeadingConstraints" destination="bsb-RV-7c6" id="7bT-aj-Kzz"/>
+                        <outlet property="imageViewTopConstraints" destination="Ceg-8z-i5U" id="5m5-NU-0LB"/>
+                        <outlet property="imageViewTrailingConstraints" destination="Tmz-Y6-awN" id="HUd-hB-wwB"/>
                         <outlet property="photoImageView" destination="aFm-O8-9Qd" id="wfC-Ln-zSp"/>
                         <outlet property="scrollView" destination="str-xF-19E" id="bcD-ry-hzO"/>
                     </connections>
