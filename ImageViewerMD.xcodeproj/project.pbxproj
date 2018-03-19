@@ -57,6 +57,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB1D694A205FD38A00FA4B45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FBDBAEBC204D1DF000ADA6DE /* Photo+CoreDataClass.swift */,
+				FBDBAEBD204D1DF000ADA6DE /* Photo+CoreDataProperties.swift */,
+				FBDBAEC0204D21B400ADA6DE /* CoreDataStack.swift */,
+				FBDBAEAB204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FB1D694B205FD3B000FA4B45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FBDBAEC8204D878A00ADA6DE /* PhotoCell.swift */,
+				FBDBAEA8204D1C8D00ADA6DE /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FB1D694C205FD41F00FA4B45 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FBDBAEBA204D1D4B00ADA6DE /* PhotoPickerManager.swift */,
+				FBDBAEC4204D7C8D00ADA6DE /* PhotosDataSource.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FBDBAE98204D1C8D00ADA6DE = {
 			isa = PBXGroup;
 			children = (
@@ -76,33 +105,28 @@
 		FBDBAEA3204D1C8D00ADA6DE /* ImageViewerMD */ = {
 			isa = PBXGroup;
 			children = (
-				FBDBAEB9204D1CA500ADA6DE /* StarterFiles */,
-				FBDBAEA4204D1C8D00ADA6DE /* AppDelegate.swift */,
-				FBDBAEA8204D1C8D00ADA6DE /* Main.storyboard */,
-				FBDBAEAE204D1C8D00ADA6DE /* Assets.xcassets */,
+				FB1D694A205FD38A00FA4B45 /* Models */,
+				FB1D694B205FD3B000FA4B45 /* Views */,
+				FBDBAEB9204D1CA500ADA6DE /* Controllers */,
+				FB1D694C205FD41F00FA4B45 /* Helpers */,
 				FBDBAEB0204D1C8D00ADA6DE /* LaunchScreen.storyboard */,
+				FBDBAEA4204D1C8D00ADA6DE /* AppDelegate.swift */,
 				FBDBAEB3204D1C8D00ADA6DE /* Info.plist */,
-				FBDBAEBA204D1D4B00ADA6DE /* PhotoPickerManager.swift */,
-				FB8EC7DD205951DC003DEB6D /* PhotoPageController.swift */,
-				FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */,
-				FB8EC7E1205D53D6003DEB6D /* PhotoZoomController.swift */,
+				FBDBAEAE204D1C8D00ADA6DE /* Assets.xcassets */,
 			);
 			path = ImageViewerMD;
 			sourceTree = "<group>";
 		};
-		FBDBAEB9204D1CA500ADA6DE /* StarterFiles */ = {
+		FBDBAEB9204D1CA500ADA6DE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FBDBAEBC204D1DF000ADA6DE /* Photo+CoreDataClass.swift */,
-				FBDBAEBD204D1DF000ADA6DE /* Photo+CoreDataProperties.swift */,
-				FBDBAEC0204D21B400ADA6DE /* CoreDataStack.swift */,
 				FBDBAEC2204D731900ADA6DE /* PhotoListController.swift */,
-				FBDBAEC8204D878A00ADA6DE /* PhotoCell.swift */,
-				FBDBAEAB204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld */,
 				FBDBAEC6204D7E8800ADA6DE /* PhotosFetchedResultsController.swift */,
-				FBDBAEC4204D7C8D00ADA6DE /* PhotosDataSource.swift */,
+				FB8EC7DD205951DC003DEB6D /* PhotoPageController.swift */,
+				FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */,
+				FB8EC7E1205D53D6003DEB6D /* PhotoZoomController.swift */,
 			);
-			path = StarterFiles;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
