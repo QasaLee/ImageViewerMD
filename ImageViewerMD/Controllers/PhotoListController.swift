@@ -48,10 +48,15 @@ class PhotoListController: UIViewController {
 
 extension PhotoListController: PhotoPickerManagerDelegate {
     func manager(_ manager: PhotoPickerManager, didPickImage image: UIImage) {
-        let _ = Photo.with(image, in: context)
-        context.saveChanges()
+//        let _ = Photo.with(image, in: context)
+//        context.saveChanges()
         
-        manager.dismissPhotoPicker(animated: true, comletion: nil)
+        manager.dismissPhotoPicker(animated: true) {
+            guard let photoFilterController = self.storyboard?.instantiateViewController(withIdentifier: "PhotoFilterController") as? PhotoFilterController else { return }
+            photoFilterController.photoImage = image
+            let navController = UINavigationController(rootViewController: photoFilterController)
+            self.navigationController?.present(navController, animated: true, completion: nil)
+        }
     }
     
     
