@@ -11,19 +11,22 @@ import UIKit
 
 class FilteredImageBuilder {
     private let image: UIImage
-    init(image: UIImage) {
+    private let context: CIContext
+    init(image: UIImage, context: CIContext) {
         self.image = image
+        self.context = context
     }
-    func applyFilter(_ filter: CIFilter) -> UIImage? {
+    func applyFilter(_ filter: CIFilter) -> CGImage? {
         guard let inputImage = image.ciImage ?? CIImage(image: image) else { return nil }
         filter.setValue(inputImage, forKey: "inputImage")
         guard let outputImage = filter.outputImage else { return nil }
-        return UIImage(ciImage: outputImage)
+        return context.createCGImage(outputImage, from: inputImage.extent)
     }
-    func image(withFilters filters: [CIFilter]) -> [UIImage] {
+    // MARK: - Helper Methods
+    func image(withFilters filters: [CIFilter]) -> [CGImage] {
         return filters.compactMap{ applyFilter($0) }
     }
-    func imageWithDefaultFilters() -> [UIImage] {
+    func imageWithDefaultFilters() -> [CGImage] {
         return image(withFilters: PhotoFilter.defualtFilters)
     }
 }

@@ -13,6 +13,7 @@
 		FBD111F0206287930089F3E0 /* PhotoFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD111EF206287930089F3E0 /* PhotoFilterController.swift */; };
 		FBD111F220633C4D0089F3E0 /* PhotoFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD111F120633C4D0089F3E0 /* PhotoFilters.swift */; };
 		FBD111F4206394EF0089F3E0 /* FilteredImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD111F3206394EF0089F3E0 /* FilteredImageBuilder.swift */; };
+		FBD111F6206479210089F3E0 /* FilteredImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD111F5206479210089F3E0 /* FilteredImageCell.swift */; };
 		FBDBAEA5204D1C8D00ADA6DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBAEA4204D1C8D00ADA6DE /* AppDelegate.swift */; };
 		FBDBAEAA204D1C8D00ADA6DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDBAEA8204D1C8D00ADA6DE /* Main.storyboard */; };
 		FBDBAEAD204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBDBAEAB204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld */; };
@@ -35,6 +36,7 @@
 		FBD111EF206287930089F3E0 /* PhotoFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFilterController.swift; sourceTree = "<group>"; };
 		FBD111F120633C4D0089F3E0 /* PhotoFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFilters.swift; sourceTree = "<group>"; };
 		FBD111F3206394EF0089F3E0 /* FilteredImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredImageBuilder.swift; sourceTree = "<group>"; };
+		FBD111F5206479210089F3E0 /* FilteredImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredImageCell.swift; sourceTree = "<group>"; };
 		FBDBAEA1204D1C8D00ADA6DE /* ImageViewerMD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageViewerMD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDBAEA4204D1C8D00ADA6DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBDBAEA9204D1C8D00ADA6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				FBDBAEC8204D878A00ADA6DE /* PhotoCell.swift */,
 				FBDBAEA8204D1C8D00ADA6DE /* Main.storyboard */,
+				FBD111F5206479210089F3E0 /* FilteredImageCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				FBD111F0206287930089F3E0 /* PhotoFilterController.swift in Sources */,
 				FBDBAEBB204D1D4B00ADA6DE /* PhotoPickerManager.swift in Sources */,
 				FB8EC7DE205951DC003DEB6D /* PhotoPageController.swift in Sources */,
+				FBD111F6206479210089F3E0 /* FilteredImageCell.swift in Sources */,
 				FB8EC7E020595406003DEB6D /* PhotoViewerController.swift in Sources */,
 				FBDBAEC3204D731900ADA6DE /* PhotoListController.swift in Sources */,
 				FBDBAEAD204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld in Sources */,
