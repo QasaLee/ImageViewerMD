@@ -24,7 +24,7 @@ class FilteredImageBuilder {
     }
     // MARK: - Helper Methods
     func image(withFilters filters: [CIFilter]) -> [CGImage] {
-        return filters.compactMap{ applyFilter($0) }
+        return filters.compactMap { applyFilter($0) }
     }
     func imageWithDefaultFilters() -> [CGImage] {
         return image(withFilters: PhotoFilter.defualtFilters)
