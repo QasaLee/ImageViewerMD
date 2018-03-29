@@ -13,25 +13,46 @@ class PhotoFilterController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var filtersCollectionView: UICollectionView!
 
-    var context: CIContext!
-    let eaglContext = EAGLContext(api: .openGLES3) //iOS 7++
     
+    let queue = OperationQueue()
+    
+    let eaglContext = EAGLContext(api: .openGLES3) //iOS 7+
+    var context: CIContext!
+    /// Which is huge(original)!
     var photoImage: UIImage?
     // Todo: Crop imageView to square!
-
+    var selectedFilter: CIFilter?
+    
     private lazy var filteredImages: [CIImage] = {
         guard let image = self.photoImage else { return [] }
         if context == nil {
             print("👉👉👉context in PFltrC is nil!!!")
             return []
         }
-        let filteredImageBuilder = FilteredImageBuilder(image: image, context: context)
+        let filteredImageBuilder = FilteredImageBuilder(image: image)
         return  filteredImageBuilder.imageWithDefaultFilters()
     }()
     
+    /// Which is smaller!
+    lazy var displayPhoto: UIImage? = {
+        guard let image = photoImage else { return nil }
+        
+        let imageWidth = image.size.width
+        let imageHeight = image.size.height
+        let screenWidth = UIScreen.main.bounds.width
+        let scaleRatio = screenWidth / imageWidth
+        let scaledHeight = scaleRatio * imageHeight
+        let size = CGSize(width: screenWidth, height: scaledHeight)
+        
+        return image.resized(to: size)
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = photoImage
+//        imageView.image = photoImage
+        imageView.image = displayPhoto
+        filtersCollectionView.delegate = self
         filtersCollectionView.dataSource = self
     }
 }
@@ -59,3 +80,37 @@ extension PhotoFilterController: UICollectionViewDataSource {
         return cell
     }
 }
+
+
+extension PhotoFilterController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let filter = PhotoFilter.defualtFilters[indexPath.row]
+        selectedFilter = filter
+        
+        let image = FiltrationImage(image: displayPhoto!)
+        let operation = ImageFiltrationOperation(image: image, filter: filter)
+        
+        operation.completionBlock = {
+            if operation.isCancelled {
+                return
+            }
+            DispatchQueue.main.async {
+                self.imageView.image = operation.filtrationImage.image
+            }
+        }
+        
+        queue.addOperation(operation)
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

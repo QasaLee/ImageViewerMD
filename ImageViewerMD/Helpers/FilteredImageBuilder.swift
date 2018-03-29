@@ -11,10 +11,14 @@ import UIKit
 
 class FilteredImageBuilder {
     private let image: UIImage
-    private let context: CIContext
-    init(image: UIImage, context: CIContext) {
+//    private let context: CIContext
+//    init(image: UIImage, context: CIContext) {
+//        self.image = image
+//        self.context = context
+//    }
+
+    init(image: UIImage) {
         self.image = image
-        self.context = context
     }
     func applyFilter(_ filter: CIFilter) -> CIImage? {
         guard let inputImage = image.ciImage ?? CIImage(image: image) else { return nil }
