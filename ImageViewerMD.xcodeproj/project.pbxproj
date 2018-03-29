@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB59E91B206A2235005488EA /* FilteredImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59E91A206A2235005488EA /* FilteredImageCell.swift */; };
 		FB8EC7DE205951DC003DEB6D /* PhotoPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EC7DD205951DC003DEB6D /* PhotoPageController.swift */; };
 		FB8EC7E020595406003DEB6D /* PhotoViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */; };
 		FB8EC7E2205D53D6003DEB6D /* PhotoZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EC7E1205D53D6003DEB6D /* PhotoZoomController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB59E91A206A2235005488EA /* FilteredImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredImageCell.swift; sourceTree = "<group>"; };
 		FB8EC7DD205951DC003DEB6D /* PhotoPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageController.swift; sourceTree = "<group>"; };
 		FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerController.swift; sourceTree = "<group>"; };
 		FB8EC7E1205D53D6003DEB6D /* PhotoZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoZoomController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				FBDBAEC8204D878A00ADA6DE /* PhotoCell.swift */,
+				FB59E91A206A2235005488EA /* FilteredImageCell.swift */,
 				FBDBAEA8204D1C8D00ADA6DE /* Main.storyboard */,
 			);
 			path = Views;
@@ -213,6 +216,7 @@
 				FBD111F0206287930089F3E0 /* PhotoFilterController.swift in Sources */,
 				FBDBAEBB204D1D4B00ADA6DE /* PhotoPickerManager.swift in Sources */,
 				FB8EC7DE205951DC003DEB6D /* PhotoPageController.swift in Sources */,
+				FB59E91B206A2235005488EA /* FilteredImageCell.swift in Sources */,
 				FB8EC7E020595406003DEB6D /* PhotoViewerController.swift in Sources */,
 				FBDBAEC3204D731900ADA6DE /* PhotoListController.swift in Sources */,
 				FBDBAEAD204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld in Sources */,
