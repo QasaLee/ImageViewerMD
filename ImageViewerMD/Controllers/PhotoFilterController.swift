@@ -44,7 +44,7 @@ extension PhotoFilterController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Debug
-        print("There are \(filteredImages.count) images applied to filters.")
+        print("👉👉👉There are \(filteredImages.count) images applied to filters.")
         return filteredImages.count
     }
     

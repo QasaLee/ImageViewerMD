@@ -43,6 +43,7 @@ class FilteredImageCell: UICollectionViewCell {
 
 extension FilteredImageCell: GLKViewDelegate { // The entire cell is the area where a  GLKView will draw.
     func glkView(_ view: GLKView, drawIn rect: CGRect) {
+//        context.draw(image, in: rect, from: image.extent)
         let drawableRectSize = CGSize(width: view.drawableWidth, height: view.drawableHeight)
         let drawableRect = CGRect(origin: .zero, size: drawableRectSize)
         context.draw(image, in: drawableRect, from: image.extent)
