@@ -19,7 +19,9 @@ class FilteredImageBuilder {
     func applyFilter(_ filter: CIFilter) -> CIImage? {
         guard let inputImage = image.ciImage ?? CIImage(image: image) else { return nil }
         filter.setValue(inputImage, forKey: "inputImage")
+        
         guard let outputImage = filter.outputImage else { return nil }
+        
         return outputImage.cropped(to: inputImage.extent)
     }
     // MARK: - Helper Methods

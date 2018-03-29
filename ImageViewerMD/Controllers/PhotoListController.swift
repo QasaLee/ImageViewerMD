@@ -54,6 +54,10 @@ extension PhotoListController: PhotoPickerManagerDelegate {
         manager.dismissPhotoPicker(animated: true) {
             guard let photoFilterController = self.storyboard?.instantiateViewController(withIdentifier: "PhotoFilterController") as? PhotoFilterController else { return }
             photoFilterController.photoImage = image
+            
+            let context = CIContext() // CGImage‘s Origin!
+            photoFilterController.context = context // The first image is never empty again.
+            
             let navController = UINavigationController(rootViewController: photoFilterController)
             self.navigationController?.present(navController, animated: true, completion: nil)
         }

@@ -15,10 +15,6 @@ class FilteredImageCell: UICollectionViewCell {
     var eaglContext: EAGLContext!
     var image: CIImage!
     
-    private lazy var context: CIContext = { // In the end needs a CIContext to draw.
-        return CIContext(eaglContext: eaglContext)
-    }()
-    
     private lazy var glkView: GLKView = {
         let view = GLKView(frame: self.contentView.frame, context: self.eaglContext)
         view.translatesAutoresizingMaskIntoConstraints = false // If I want to use AutoLayout instead of frame-based layout and this specific UIView will be added to a view hierarchy which is using AutoLayout.
@@ -27,10 +23,15 @@ class FilteredImageCell: UICollectionViewCell {
         return view
     }()
     
+    
+    private lazy var context: CIContext = { // In the end needs a CIContext to draw.
+        return CIContext(eaglContext: eaglContext)
+    }()
+    
     override func layoutSubviews() {
         super.layoutSubviews() // cell sets itself up
-        contentView.addSubview(glkView)
         
+        contentView.addSubview(glkView)
         NSLayoutConstraint.activate([
             glkView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             glkView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
