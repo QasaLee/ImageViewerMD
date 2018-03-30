@@ -54,6 +54,34 @@ class PhotoFilterController: UIViewController {
         imageView.image = displayPhoto
         filtersCollectionView.delegate = self
         filtersCollectionView.dataSource = self
+        
+        setupNavigation()
+    }
+    
+    func setupNavigation() {
+        // an action selector, which identifies the method to be invoked, and a target, which is the object to receive the message. The message sent when the event occurs is called an action message.
+        // Target is typically a custom controller that handles the action message in an application-specific way.
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissPhotoFilterController))
+        navigationItem.leftBarButtonItem = cancelButton
+        
+        let nextButton = UIBarButtonItem(title: "NeXt", style: .done, target: self, action: #selector(launchPhotoMetadataController)) // ".done": The style for a done button—for example, a button that completes some task and returns to the previous view.
+        navigationItem.rightBarButtonItem = nextButton
+    }
+    
+    
+    @objc func dismissPhotoFilterController() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func launchPhotoMetadataController() {
+        guard let photoMetadataController = storyboard?.instantiateViewController(withIdentifier: "PhotoMetadataController") as? PhotoMetadataController else { return }
+        
+        photoMetadataController.displayPhoto = imageView.image
+        photoMetadataController.photo = photoImage
+        photoMetadataController.filter = selectedFilter
+        
+        navigationController?.pushViewController(photoMetadataController, animated: true)
+        
     }
 }
 

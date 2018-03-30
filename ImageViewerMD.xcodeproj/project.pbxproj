@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FB3A5DDC206CD904005B5ABF /* UIImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A5DDB206CD904005B5ABF /* UIImage+Resizing.swift */; };
 		FB3A5DDE206CDCD3005B5ABF /* ImageFiltrationOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A5DDD206CDCD3005B5ABF /* ImageFiltrationOperation.swift */; };
+		FB3A5DE0206CE7BC005B5ABF /* PhotoMetadataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A5DDF206CE7BC005B5ABF /* PhotoMetadataController.swift */; };
 		FB59E91B206A2235005488EA /* FilteredImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59E91A206A2235005488EA /* FilteredImageCell.swift */; };
 		FB8EC7DE205951DC003DEB6D /* PhotoPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EC7DD205951DC003DEB6D /* PhotoPageController.swift */; };
 		FB8EC7E020595406003DEB6D /* PhotoViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		FB3A5DDB206CD904005B5ABF /* UIImage+Resizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resizing.swift"; sourceTree = "<group>"; };
 		FB3A5DDD206CDCD3005B5ABF /* ImageFiltrationOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFiltrationOperation.swift; sourceTree = "<group>"; };
+		FB3A5DDF206CE7BC005B5ABF /* PhotoMetadataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMetadataController.swift; sourceTree = "<group>"; };
 		FB59E91A206A2235005488EA /* FilteredImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredImageCell.swift; sourceTree = "<group>"; };
 		FB8EC7DD205951DC003DEB6D /* PhotoPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageController.swift; sourceTree = "<group>"; };
 		FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */,
 				FB8EC7E1205D53D6003DEB6D /* PhotoZoomController.swift */,
 				FBD111EF206287930089F3E0 /* PhotoFilterController.swift */,
+				FB3A5DDF206CE7BC005B5ABF /* PhotoMetadataController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				FB59E91B206A2235005488EA /* FilteredImageCell.swift in Sources */,
 				FB8EC7E020595406003DEB6D /* PhotoViewerController.swift in Sources */,
 				FBDBAEC3204D731900ADA6DE /* PhotoListController.swift in Sources */,
+				FB3A5DE0206CE7BC005B5ABF /* PhotoMetadataController.swift in Sources */,
 				FB3A5DDC206CD904005B5ABF /* UIImage+Resizing.swift in Sources */,
 				FBDBAEAD204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld in Sources */,
 				FBDBAEBE204D1DF000ADA6DE /* Photo+CoreDataClass.swift in Sources */,
