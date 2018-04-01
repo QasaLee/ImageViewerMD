@@ -21,6 +21,8 @@ extension Photo {
     
     @NSManaged public var creationDate: NSDate
     @NSManaged public var imageData: NSData
+    @NSManaged public var caption: String?
+    @NSManaged public var tags: Set<Tag>
 }
 
 extension Photo {
@@ -28,11 +30,21 @@ extension Photo {
         return String(describing: Photo.self)
     }
     
-    @nonobjc class func with(_ image: UIImage, in context: NSManagedObjectContext) -> Photo { // static method
+    @nonobjc class func with(_ image: UIImage, caption: String?, tags: [String], in context: NSManagedObjectContext) -> Photo { // static method
         let photo = NSEntityDescription.insertNewObject(forEntityName: Photo.entityName, into: context) as! Photo
         
         photo.creationDate = Date() as NSDate
         photo.imageData = UIImageJPEGRepresentation(image, 1.0)! as NSData
+        
+        photo.caption = caption
+        if !tags.isEmpty {
+            let savedTags: [Tag] = tags.map { (name) -> Tag in
+                let tag = Tag.withName(name, in: context)
+                tag.photos.insert(photo)
+                return tag
+            }
+            photo.tags = Set(savedTags)
+        }
         
         return photo
     }

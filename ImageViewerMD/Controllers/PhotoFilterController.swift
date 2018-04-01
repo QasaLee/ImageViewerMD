@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PhotoFilterController: UIViewController {
     
@@ -18,6 +19,10 @@ class PhotoFilterController: UIViewController {
     
     let eaglContext = EAGLContext(api: .openGLES3) //iOS 7+
     var context: CIContext!
+    
+    var managedObjectContext: NSManagedObjectContext?
+    
+    
     /// Which is huge(original)!
     var photoImage: UIImage?
     // Todo: Crop imageView to square!
@@ -79,6 +84,7 @@ class PhotoFilterController: UIViewController {
         photoMetadataController.displayPhoto = imageView.image
         photoMetadataController.photo = photoImage
         photoMetadataController.filter = selectedFilter
+        photoMetadataController.context = managedObjectContext
         
         navigationController?.pushViewController(photoMetadataController, animated: true)
         

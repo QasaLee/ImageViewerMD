@@ -14,6 +14,8 @@
 		FB8EC7DE205951DC003DEB6D /* PhotoPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EC7DD205951DC003DEB6D /* PhotoPageController.swift */; };
 		FB8EC7E020595406003DEB6D /* PhotoViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */; };
 		FB8EC7E2205D53D6003DEB6D /* PhotoZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8EC7E1205D53D6003DEB6D /* PhotoZoomController.swift */; };
+		FBCD641D20709EBD00AABFE1 /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCD641B20709EBD00AABFE1 /* Tag+CoreDataClass.swift */; };
+		FBCD641E20709EBD00AABFE1 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCD641C20709EBD00AABFE1 /* Tag+CoreDataProperties.swift */; };
 		FBD111F0206287930089F3E0 /* PhotoFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD111EF206287930089F3E0 /* PhotoFilterController.swift */; };
 		FBD111F220633C4D0089F3E0 /* PhotoFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD111F120633C4D0089F3E0 /* PhotoFilters.swift */; };
 		FBD111F4206394EF0089F3E0 /* FilteredImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD111F3206394EF0089F3E0 /* FilteredImageBuilder.swift */; };
@@ -40,6 +42,9 @@
 		FB8EC7DD205951DC003DEB6D /* PhotoPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageController.swift; sourceTree = "<group>"; };
 		FB8EC7DF20595406003DEB6D /* PhotoViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerController.swift; sourceTree = "<group>"; };
 		FB8EC7E1205D53D6003DEB6D /* PhotoZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoZoomController.swift; sourceTree = "<group>"; };
+		FBCD641A2070984900AABFE1 /* ImageViewerMD 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ImageViewerMD 2.xcdatamodel"; sourceTree = "<group>"; };
+		FBCD641B20709EBD00AABFE1 /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FBCD641C20709EBD00AABFE1 /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FBD111EF206287930089F3E0 /* PhotoFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFilterController.swift; sourceTree = "<group>"; };
 		FBD111F120633C4D0089F3E0 /* PhotoFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFilters.swift; sourceTree = "<group>"; };
 		FBD111F3206394EF0089F3E0 /* FilteredImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredImageBuilder.swift; sourceTree = "<group>"; };
@@ -76,6 +81,8 @@
 			children = (
 				FBDBAEBC204D1DF000ADA6DE /* Photo+CoreDataClass.swift */,
 				FBDBAEBD204D1DF000ADA6DE /* Photo+CoreDataProperties.swift */,
+				FBCD641B20709EBD00AABFE1 /* Tag+CoreDataClass.swift */,
+				FBCD641C20709EBD00AABFE1 /* Tag+CoreDataProperties.swift */,
 				FBDBAEC0204D21B400ADA6DE /* CoreDataStack.swift */,
 				FBDBAEAB204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld */,
 			);
@@ -235,10 +242,12 @@
 				FBDBAEBE204D1DF000ADA6DE /* Photo+CoreDataClass.swift in Sources */,
 				FB8EC7E2205D53D6003DEB6D /* PhotoZoomController.swift in Sources */,
 				FBDBAEC1204D21B400ADA6DE /* CoreDataStack.swift in Sources */,
+				FBCD641D20709EBD00AABFE1 /* Tag+CoreDataClass.swift in Sources */,
 				FBDBAEBF204D1DF000ADA6DE /* Photo+CoreDataProperties.swift in Sources */,
 				FBD111F220633C4D0089F3E0 /* PhotoFilters.swift in Sources */,
 				FBDBAEC9204D878A00ADA6DE /* PhotoCell.swift in Sources */,
 				FBDBAEC7204D7E8800ADA6DE /* PhotosFetchedResultsController.swift in Sources */,
+				FBCD641E20709EBD00AABFE1 /* Tag+CoreDataProperties.swift in Sources */,
 				FBDBAEC5204D7C8D00ADA6DE /* PhotosDataSource.swift in Sources */,
 				FBD111F4206394EF0089F3E0 /* FilteredImageBuilder.swift in Sources */,
 				FBDBAEA5204D1C8D00ADA6DE /* AppDelegate.swift in Sources */,
@@ -435,6 +444,7 @@
 		FBDBAEAB204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				FBCD641A2070984900AABFE1 /* ImageViewerMD 2.xcdatamodel */,
 				FBDBAEAC204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodel */,
 			);
 			currentVersion = FBDBAEAC204D1C8D00ADA6DE /* ImageViewerMD.xcdatamodel */;

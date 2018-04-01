@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PhotoMetadataController: UITableViewController {
 
@@ -16,6 +17,7 @@ class PhotoMetadataController: UITableViewController {
     
     @IBOutlet weak var tagsTextFiled: UITextField!
     
+    var context: NSManagedObjectContext?
     
     var displayPhoto: UIImage?
     var photo: UIImage?
@@ -60,6 +62,13 @@ class PhotoMetadataController: UITableViewController {
     
     @objc func savePhoto() {
         
+        guard let originalPhoto = photo, let context = context else { return }
+        let caption = captionTextField.text
+
+//        let _ = Photo.with(originalPhoto, caption: caption, tags: tags, in: context)
+        let _ = Photo.with(displayPhoto!, caption: caption, tags: ["beach"], in: context) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        context.saveChanges()
+        dismiss(animated: true, completion: nil)
     }
     
 }
